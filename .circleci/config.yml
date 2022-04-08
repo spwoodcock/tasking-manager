@@ -229,7 +229,6 @@ workflows:
           branches:
             only:
             - develop
-            - staging-test
         requires:
           - build
         stack_name: "staging"
@@ -241,7 +240,6 @@ workflows:
           branches:
             only:
             - develop
-            - staging-test
         requires:
           - build
         context: tasking-manager-staging
@@ -252,7 +250,7 @@ workflows:
         filters:
           branches:
             only:
-            - fix/cfn-init-codedeploy
+            - staging-test
         requires:
           - build
         stack_name: "test"
@@ -263,7 +261,7 @@ workflows:
         filters:
           branches:
             only:
-            - fix/cfn-init-codedeploy
+            - staging-test
         requires:
           - build
         context: tasking-manager-staging
